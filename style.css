@@ -1,180 +1,131 @@
+* {
+    box-sizing: border-box;
+    /* Ne pas ajouter le padding et la bordure à la largeur et à la hauteur des éléments */
+}
+
 body {
+    font-family: Arial, sans-serif;
     background-color: #ffffff;
+    color: #252525;
+    font-size: 1rem;
+    line-height: 1.5em;
     font-weight: 400;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+/* Largeur des contenus */
+.container {
+    width: 90%;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styles des hyperliens */
+a {
+    text-decoration: none;
+    color: royalblue;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styles des images pour le responsive */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 h1 {
     text-align: center;
     font-style: italic;
-    color: #252323;
     font-size: 2rem;
     margin: 2rem;
 }
 
 header {
+    position: relative;
+    z-index: 10;
     background-image: url(images/tour_eiffel.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100vw;
-    padding: 250px 0;
-}
-
-.logo.menu {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 12px;
-    margin-top: -250px;
-    position: sticky;
-    top: 0;
-}
-
-.menu-outline {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.menu-outline.hidden {
-    display: none;
-}
-
-.close-btn {
-    position: absolute;
-    top: 40px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    color: black;
-}
-
-.close-btn::before,
-.close-btn::after {
-    content: "";
-    position: absolute;
-    width: 70%;
-    height: 2px;
-    background-color: black;
-    left: 0;
-}
-
-.close-btn::before {
-    transform: rotate(45deg);
-}
-
-.close-btn::after {
-    transform: rotate(-45deg);
-}
-
-#scrollToTopButton {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #f9f9f9;
-    color: #000000;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18px;
-    width: 40px;
-    height: 40px;
-}
-
-#scrollToTopButton i {
-    margin-right: 0;
-}
-
-#scrollToTopButton:hover {
-    background-color: #ffffff;
+    height: 100vh;
 }
 
 nav {
-    width: 100%;
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: 0;
-}
-
-nav li {
-    margin-right: 1rem;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav li a:hover {
-    color: #1fa5d6e7;
-    text-decoration: underline;
-}
-
-.sidenav {
-    position: fixed;
+    flex-wrap: wrap;
+    padding: 1rem;
+    position: sticky;
     top: 0;
-    right: -600px;
-    width: 600px;
-    height: 100%;
-    background: #efefef;
-    overflow-x: hidden;
-    transition: 0.3s;
-    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-.sidenav.active {
-    right: 0;
+.navbar-brand {
+    color: black;
+    font-size: 1rem;
+    text-transform: uppercase;
 }
 
-.sidenav ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 100px;
+#navbar-toggle {
+    flex-basis: 40%;
+    max-width: 60px;
+    border: 0;
+    border-radius: 5px;
+    background-color: transparent;
     text-align: center;
 }
 
-.sidenav ul li {
-    margin-bottom: 20px;
+.menu-outline {
+    font-size: 2rem;
+    cursor: pointer;
 }
 
-.sidenav a {
-    text-decoration: none;
-    color: #000000;
-}
-
-.sidenav .brand {
+#navbar-collapse {
     display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-header nav ul {
-    list-style: none;
-    font-size: 20px;
+#navbar-collapse a {
+    margin: 1rem;
+}
+
+#navbar-collapse.active {
+    display: block;
+    flex-basis: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+    #navbar-toggle {
+        display: none;
+    }
+
+    #navbar-collapse {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+/* Affichez le menu lorsque la classe 'active' est présente */
+header nav ul.active {
+    display: block;
 }
 
 header nav ul li a {
-    color: #252525;
     text-decoration: none;
-    margin: 17rem;
 }
 
 header nav ul li a:hover {
     color: #c9810f;
-    transition: 0.5s;
+    transition: .5s;
 }
 
 header nav ul li a.active {
@@ -182,13 +133,15 @@ header nav ul li a.active {
     text-decoration: underline;
 }
 
-#nav {
-    display: none;
-}
 
-#nav.active {
-    display: block;
-}
+
+
+
+/* Ajoutez ces styles dans votre fichier style.css */
+
+
+
+/* page d'accueil */
 
 #accueil {
     display: flex;
@@ -198,7 +151,6 @@ header nav ul li a.active {
 #accueil .p_accueil {
     color: #b84e0d;
     font-size: 2rem;
-    margin: 2rem;
 }
 
 #accueil p {
@@ -209,40 +161,221 @@ header nav ul li a.active {
     margin-top: 16px;
     line-height: 32px;
     font-style: italic;
-    margin: 2rem;
+
 }
 
 #accueil a {
     background-color: #b84e0d;
     color: #fff;
-    width: 46vw;
-    height: 5vh;
-    margin: 0 0 2rem 2rem;
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.7rem;
+    margin-bottom: 2rem;
     border-radius: 12px;
     font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
     text-decoration: none;
     text-align: center;
-    padding-top: 5px;
 }
+
 
 #accueil a:hover {
     background: linear-gradient(#b84e0d, #f58a25);
 }
+
+
+
+
 
 hr {
     width: 30%;
     margin-left: 10rem;
 }
 
+
 footer {
     display: flex;
     justify-content: space-around;
+
 }
+
+
+
 
 footer .logo-linkedin {
     color: rgb(18, 105, 199);
     font-size: 20px;
     margin: 27px;
+
+
+}
+
+
+
+
+
+
+
+
+/* page d'honoraires */
+#honoraires .p_ul {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #130e0e;
+    /* margin:1rem; */
+    font-family: inherit;
+    margin: 0 0 2rem 2rem;
+
+
+}
+
+
+
+
+
+
+
+/* page à propos */
+
+
+#propos h1 {
+    font-size: 40px;
+    color: #081c4b;
+    line-height: 40px;
+    text-align: left;
+    font-family: 'Yeseva One', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 1rem;
+}
+
+
+
+#propos p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #130e0e;
+    margin: 0 2rem 2rem;
+    font-family: inherit;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* contact */
+
+/*  Form Style */
+
+
+#contact form {
+    margin: 5rem;
+}
+
+
+
+#contact input,
+textarea {
+    border: none;
+    border: 1px solid currentColor;
+    margin: 0 0 20px 0;
+    padding: 10px;
+    letter-spacing: 0;
+    box-shadow: none;
+    background: none;
+    color: #313139;
+    border-radius: 0;
+    font-size: 14px;
+}
+
+#contact input[type="text"],
+input[type="tel"],
+textarea,
+input[type="submit"] {
+    width: 100%;
+    height: 40px;
+}
+
+#contact textarea {
+    height: 98px;
+    max-width: none;
+    resize: none;
+}
+
+
+
+
+
+
+
+#contact input[type="submit"] {
+    width: auto;
+    height: 40px;
+    line-height: 1;
+    margin-top: 10px;
+    padding: 0 15px;
+    border-radius: 1px;
+    border: 1px solid currentColor;
+}
+
+
+
+
+
+#contact .requiredField {
+    border: none;
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+    ion-icon {
+        display: none;
+    }
+
+    #nav {
+        display: flex;
+    }
+
+    #contact form {
+        width: 70%;
+        margin: 10rem;
+
+
+
+
+    }
 }

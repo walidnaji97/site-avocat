@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,32 +9,38 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <div class="logo menu">
-            <div class="logo">
-                <a href="#">logo</a>
-            </div>
-        </div>
-        <div class="sidenav">
-            <div class="close-btn"></div>
-            <ul>
+        <nav>
+            <a class="navbar-brand" href="index.html">Maximilian Girod-Laine</a>
+            <button id="navbar-toggle" type="button">
+                <ion-icon name="menu-outline" class="menu-outline"></ion-icon>
+            </button>
+            <ul id="navbar-collapse">
                 <li><a href="index.html" class="active">Accueil</a></li>
                 <li><a href="propos.html">A propos</a></li>
                 <li><a href="honoraires.html">Honoraires</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-        </div>
-        <div class="responsive">
-            <ion-icon name="menu-outline" class="menu-outline"></ion-icon>
-        </div>
+        </nav>
     </header>
-    <section id="accueil">
-        <p class="p_accueil">Besoin d'aide?</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis dolor debitis, ipsam cumque cupiditate quas iusto itaque omnis amet est voluptate maxime dolores ratione reprehenderit optio quos quidem nesciunt doloremque.</p>
-        <a href="contact.html">Contactez-nous</a>
-    </section>
-    <hr> 
+    <main class="container">
+        <h1>Maximilian Girod-Laine, avocat</h1>
+        <section id="accueil">
+            <p class="p_accueil">Besoin d'aide?</p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis dolor debitis, ipsam cumque cupiditate quas iusto itaque omnis amet est voluptate maxime dolores ratione reprehenderit optio quos quidem nesciunt doloremque.
+
+
+            </p>
+
+            <a href="contact.html">Contactez-nous</a>
+
+
+        </section>
+    </main>
+    <hr>
     <footer>
         <ion-icon name="logo-linkedin" class="logo-linkedin"></ion-icon>
         <p class="p1">Maximilian Girod-Laine</p>
@@ -44,4 +51,5 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
